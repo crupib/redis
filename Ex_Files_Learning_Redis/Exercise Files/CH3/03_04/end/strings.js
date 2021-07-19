@@ -4,6 +4,7 @@ const Strings = (redis) => {
         console.log(result);
     });
     
+    redis.set('address', 400)
     redis.get('address', (err, result) => {
         console.log(result);
     });
