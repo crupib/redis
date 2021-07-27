@@ -11,7 +11,9 @@ const Sets = (redis) => {
 
     // remove an item
     redis.spop('groceries:fruits');
-
+    redis.smembers('groceries:fruits', (err, result) => {
+        console.log(result);
+    });
     redis.sadd('groceries:fruits', 'apples', 'grapes', 'pears', 'orange');
 
     // print to console
